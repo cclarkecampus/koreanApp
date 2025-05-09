@@ -1,0 +1,741 @@
+/* Aboutus.html */
+
+body {
+    font-family: 'Afacad Flux' !important;
+  }
+
+  .profile-img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+  }
+
+  .profile-img:hover {
+    transform: scale(1.05);
+  }
+
+  .about-section {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .about-section:hover {
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+  }
+
+  h2 {
+    color: #0077b6;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+  }
+
+  .tab-content {
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 15px;
+  }
+  
+  .logo{
+    width: 120px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+/* index.html */
+  .hero {
+    background-color: #04091ef0;
+    background-size: cover;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+  }
+
+  .navbar {
+    background-color: #d82b2b; 
+    height: 95px;
+    color: white;
+    font-weight: bolder;
+    font-style: 'Afacad Flux' !important;
+  }
+
+  .hero h1 {
+    font-size: 7rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.5);
+  }
+
+  .section-title {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+  }
+
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  header{
+    color: #fff !important;
+    padding: 2rem 0;
+    font-size: 20px;
+  }
+  footer {
+    background-color: #04091ef0;
+    color: #fff !important;
+    padding: 2rem 0;
+    font-size: 20px;
+  }
+
+  .footer .map-link a {
+    color: white !important;
+    text-decoration: none;
+}
+
+.footer i {
+    color: white !important;
+}
+
+  .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 18px 0 #04091ef0;
+    border-color: #04091ef0;
+
+  }
+
+  .card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0.9;
+    font-size: 30px;
+
+
+  }
+
+  .btn {
+    background-color: #04091ef0;
+    color: white;
+    align-items: center;
+    text-align: center;
+  }
+
+  .btn:hover {
+    background-color: red;
+    color: #04091ef0;
+    font-weight: bold;
+  }
+
+  .youtube-icon{
+    margin-top: 20px;
+  }
+  .social-links a {
+    transition: opacity 0.3s ease;
+    font-size: 1.1rem;
+  }
+
+  .social-links a:hover {
+    opacity: 0.8;
+  }
+
+  .social-links i {
+    width: 24px;
+  }
+
+  .social-links .social-icon {
+    font-size: 24px;  /* Increases icon size */
+    width: 30px;      /* Ensures consistent width */
+    transition: transform 0.3s ease;
+  }
+
+  .social-links a:hover .social-icon {
+    transform: scale(1.2);  /* Adds a hover effect */
+  }
+
+  .footer-social-link {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+  }
+
+  .footer-social-link:hover {
+    opacity: 0.8;
+    color: #ffffff !important;
+  }
+
+  .footer-social-link span {
+    color: #ffffff !important;
+    font-weight: 600;
+  }
+
+  /* Ensure links stay white in responsive view */
+  @media (max-width: 991px) {
+    .footer-social-link,
+    .footer-social-link:hover,
+    .footer-social-link span {
+        color: #ffffff !important;
+        text-align: center;
+    }
+    
+    .social-links {
+        align-items: center !important;
+    }
+  }
+
+/* contact.html */
+
+
+.contact-form {
+  background: #fff; 
+  margin: 10px auto;
+  padding: 20px;
+  border: 4px solid black;
+  border-radius: 2rem;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+}
+
+.contact-info {
+  background: #ffffff;
+  margin: 5px auto;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 2rem;
+  border: 4px solid black;
+  max-width: 600px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h4 {
+  margin-bottom: 20px;
+}
+
+.contact-info li {
+  font-size: 16px;
+}
+
+/* Contact Page Styles */
+.map-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    min-height: 300px;
+}
+
+.contact-details {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.contact-details li {
+    font-size: 1rem;
+}
+
+.contact-details i {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 767.98px) {
+    .map-container iframe {
+        height: 200px;
+    }
+}
+
+.contactForm{
+  font-size: 30px;
+}
+
+/* Form Styles */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    padding: 0.75rem;
+}
+
+.form-control:focus {
+    border-color: #d82b2b;
+    box-shadow: 0 0 0 0.2rem rgba(216, 43, 43, 0.25);
+}
+
+.btn-primary {
+    background-color: #d82b2b;
+    border-color: #d82b2b;
+}
+
+.btn-primary:hover {
+    background-color: #c12525;
+    border-color: #c12525;
+}
+
+/* class shedules.html */
+
+/* Base Styles */
+:root {
+  --primary-color: #e74c3c;
+  --secondary-color: #f0dc4e;
+  --text-color: #333;
+  --light-bg: #e6f3ff;
+  --card-bg: #ffffff;
+  --card-border: #dee2e6;
+}
+
+/* Schedule Container - moved below Rubik's Cube */
+.schedule-container {
+  min-height: 100vh;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Schedule Page Header Styles */
+.schedule-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.schedule-container p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .schedule-container h1 {
+        font-size: 2rem;
+    }
+    
+    .schedule-container p {
+        font-size: 1rem;
+    }
+}
+
+/* Logo Styling */
+.logo-container {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* Card Styling */
+.schedule-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: none;
+}
+
+.schedule-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header-shedule {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px;
+  border-bottom: none;
+}
+
+.card-header-shedule h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Table Styling */
+.table {
+  margin-bottom: 0;
+}
+
+.table th {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-color: #f8d7da;
+  font-weight: 600;
+}
+
+.table td, .table th {
+  padding: 15px;
+  vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(240, 220, 78, 0.1);
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  padding: 8px 25px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: none;
+  background-color: var(--card-bg);
+}
+
+.contact-item i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.contact-item p {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+/* Transition effect between Rubik's cube and content */
+.container-fluid::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  /* background: linear-gradient(to bottom, #0a0a22, var(--light-bg)); */
+  z-index: 0;
+}
+
+/* Badge for Today classes */
+.badge.bg-danger {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 767.98px) {
+  .card-header h2 {
+      font-size: 1.5rem;
+  }
+  
+  .table td, .table th {
+      padding: 10px;
+  }
+  
+  h1 {
+      font-size: 1.8rem;
+  }
+  
+  .container-fluid::before {
+      top: -30px;
+      height: 60px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .card-header h2 {
+      font-size: 1.3rem;
+  }
+  
+  .table td, .table th {
+      padding: 8px;
+      font-size: 0.9rem;
+  }
+  
+  h1 {
+      font-size: 1.5rem;
+  }
+  
+  .container-fluid::before {
+      top: -20px;
+      height: 40px;
+  }
+}
+
+/* ....................................... */
+/* Rubik's Cube Animation Styles */
+.rubik-container {
+  width: 100%;
+  background-color: #04091ef0;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* .rubik-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+      radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 5px),
+      radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px),
+      radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 6px);
+  background-size: 550px 550px, 350px 350px, 250px 250px;
+  background-position: 0 0, 40px 60px, 130px 270px;
+  z-index: 1;
+} */
+
+.scene {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  perspective: 600px;
+  position: relative;
+  z-index: 2;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  animation: rotate 15s infinite linear;
+}
+
+.cube__face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #333;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  opacity: 0.9;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  height: 100%;
+  gap: 3px;
+  padding: 3px;
+  background-color: #333;
+}
+
+.grid-item {
+  border-radius: 2px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add artistic texture to grid items */
+.grid-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
+  background-size: cover;
+  opacity: 0.3;
+}
+
+/* Face Positioning */
+.cube__face--front  { transform: rotateY(  0deg) translateZ(100px); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(100px); }
+.cube__face--back   { transform: rotateY(180deg) translateZ(100px); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(100px); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+/* Animation */
+@keyframes rotate {
+  0% { 
+      transform: translateZ(-100px) rotateX(0deg) rotateY(0deg) rotateZ(0deg); 
+  }
+  25% { 
+      transform: translateZ(-100px) rotateX(90deg) rotateY(45deg) rotateZ(45deg); 
+  }
+  50% { 
+      transform: translateZ(-100px) rotateX(180deg) rotateY(90deg) rotateZ(90deg); 
+  }
+  75% { 
+      transform: translateZ(-100px) rotateX(270deg) rotateY(135deg) rotateZ(135deg); 
+  }
+  100% { 
+      transform: translateZ(-100px) rotateX(360deg) rotateY(180deg) rotateZ(180deg); 
+  }
+}
+
+/* Dynamic glowing effect */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+  50% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.8); }
+}
+
+.cube {
+  animation: rotate 15s infinite linear, glow 5s infinite ease-in-out;
+}
+
+/* Add some artistic elements to match the image */
+.rubik-container::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-family: 'Brush Script MT', cursive;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 2rem;
+  z-index: 3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767.98px) {
+  .rubik-container {
+      padding: 60px 0;
+  }
+  
+  .scene {
+      width: 150px;
+      height: 150px;
+  }
+  
+  .cube__face {
+      width: 150px;
+      height: 150px;
+  }
+  
+  .cube__face--front  { transform: rotateY(  0deg) translateZ(75px); }
+  .cube__face--right  { transform: rotateY( 90deg) translateZ(75px); }
+  .cube__face--back   { transform: rotateY(180deg) translateZ(75px); }
+  .cube__face--left   { transform: rotateY(-90deg) translateZ(75px); }
+  .cube__face--top    { transform: rotateX( 90deg) translateZ(75px); }
+  .cube__face--bottom { transform: rotateX(-90deg) translateZ(75px); }
+  
+  @keyframes rotate {
+      0% { transform: translateZ(-75px) rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+      25% { transform: translateZ(-75px) rotateX(90deg) rotateY(45deg) rotateZ(45deg); }
+      50% { transform: translateZ(-75px) rotateX(180deg) rotateY(90deg) rotateZ(90deg); }
+      75% { transform: translateZ(-75px) rotateX(270deg) rotateY(135deg) rotateZ(135deg); }
+      100% { transform: translateZ(-75px) rotateX(360deg) rotateY(180deg) rotateZ(180deg); }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .rubik-container {
+      padding: 40px 0;
+  }
+  
+  .scene {
+      width: 120px;
+      height: 120px;
+  }
+  
+  .cube__face {
+      width: 120px;
+      height: 120px;
+  }
+  
+  .cube__face--front  { transform: rotateY(  0deg) translateZ(60px); }
+  .cube__face--right  { transform: rotateY( 90deg) translateZ(60px); }
+  .cube__face--back   { transform: rotateY(180deg) translateZ(60px); }
+  .cube__face--left   { transform: rotateY(-90deg) translateZ(60px); }
+  .cube__face--top    { transform: rotateX( 90deg) translateZ(60px); }
+  .cube__face--bottom { transform: rotateX(-90deg) translateZ(60px); }
+  
+  @keyframes rotate {
+      0% { transform: translateZ(-60px) rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+      25% { transform: translateZ(-60px) rotateX(90deg) rotateY(45deg) rotateZ(45deg); }
+      50% { transform: translateZ(-60px) rotateX(180deg) rotateY(90deg) rotateZ(90deg); }
+      75% { transform: translateZ(-60px) rotateX(270deg) rotateY(135deg) rotateZ(135deg); }
+      100% { transform: translateZ(-60px) rotateX(360deg) rotateY(180deg) rotateZ(180deg); }
+  }
+}
+
+/* contact.html */
+.full-content {
+  background-image: url('assets/img/contact/contact-bg.png');
+  background-size: cover;
+}
+
+.contact-form {
+  background: #fff;
+  margin: 10px auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 1rem;
+  max-width: 600px;
+}
+
+.contact-info {
+  background: #ffffff;
+  margin: 5px auto;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 0.3rem;
+  max-width: 600px;
+}
+
+.contact-info h4 {
+  margin-bottom: 20px;
+}
+
+.contact-info li {
+  font-size: 16px;
+}
+
+.iconOne{
+  color: black;
+  font-size: large;
+  text-decoration: none;
+}
+.iconOne:hover{
+  color: red;
+  transition: 0.3s;
+  text-decoration: none;
+}
+/* .iconOne:visited{
+  color: darkblue;
+  text-decoration: none;
+  background-color: transparent;
+}*/
+.iconOne:active{
+  color:orange;
+  text-decoration: none;
+  background-color: transparent;
+}

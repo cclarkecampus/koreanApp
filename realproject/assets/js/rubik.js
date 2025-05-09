@@ -1,0 +1,151 @@
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the Rubik's Cube
+    initRubiksCube();
+});
+
+function initRubiksCube() {
+    // Get all grid items
+    const gridItems = document.querySelectorAll('.grid-item');
+    
+    // Create an array of artistic colors similar to the image
+    const artisticColors = [
+        '#FF5252', // Red
+        '#FF9800', // Orange
+        '#FFEB3B', // Yellow
+        '#4CAF50', // Green
+        '#2196F3', // Blue
+        '#9C27B0', // Purple
+        '#00BCD4', // Cyan
+        '#FF4081', // Pink
+        '#8BC34A', // Light Green
+        '#FFC107', // Amber
+        '#3F51B5', // Indigo
+        '#009688'  // Teal
+    ];
+    
+    // Apply random colors to some of the grid items to make it look scrambled
+    // This creates the artistic effect similar to the reference image
+    gridItems.forEach((item, index) => {
+        // Create inner elements for artistic effect - similar to the image
+        if (Math.random() > 0.7) {
+            // Add some artistic elements to certain squares
+            const artElement = document.createElement('div');
+            artElement.classList.add('art-element');
+            artElement.style.position = 'absolute';
+            artElement.style.top = '50%';
+            artElement.style.left = '50%';
+            artElement.style.transform = 'translate(-50%, -50%)';
+            
+            // Create different artistic elements based on position
+            const artType = Math.floor(Math.random() * 4);
+            
+            switch(artType) {
+                case 0:
+                    // Small circle
+                    artElement.style.width = '40%';
+                    artElement.style.height = '40%';
+                    artElement.style.borderRadius = '50%';
+                    artElement.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+                    break;
+                case 1:
+                    // Line
+                    artElement.style.width = '70%';
+                    artElement.style.height = '2px';
+                    artElement.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
+                    break;
+                case 2:
+                    // Small square
+                    artElement.style.width = '30%';
+                    artElement.style.height = '30%';
+                    artElement.style.backgroundColor = 'rgba(255, 255, 255, 0.25)';
+                    break;
+                case 3:
+                    // Cross
+                    artElement.style.width = '60%';
+                    artElement.style.height = '60%';
+                    artElement.style.backgroundImage = 'linear-gradient(to bottom right, transparent 45%, rgba(255, 255, 255, 0.3) 45%, rgba(255, 255, 255, 0.3) 55%, transparent 55%), linear-gradient(to bottom left, transparent 45%, rgba(255, 255, 255, 0.3) 45%, rgba(255, 255, 255, 0.3) 55%, transparent 55%)';
+                    break;
+            }
+            
+            item.appendChild(artElement);
+        }
+    });
+    
+    // Add mouse interaction for a more engaging experience
+    const cube = document.querySelector('.cube');
+    const scene = document.querySelector('.scene');
+    let isMouseDown = false;
+    let startX, startY;
+    let rotationX = 0, rotationY = 0;
+    let currentRotationX = 0, currentRotationY = 0;
+    
+    // Add a special color change effect when hovering over the cube
+    scene.addEventListener('mouseenter', function() {
+        // Pause the animation when hovering
+        cube.style.animationPlayState = 'paused';
+        
+        // Extract current transform
+        const currentTransform = getComputedStyle(cube).transform;
+        cube.style.transform = currentTransform;
+        cube.style.animation = 'none';
+        
+        // Add a glowing effect
+        cube.style.boxShadow = '0 0 30px rgba(255, 255, 255, 0.8)';
+    });
+    
+    scene.addEventListener('mouseleave', function() {
+        // Resume the animation when no longer hovering
+        cube.style.animation = 'rotate 15s infinite linear, glow 5s infinite ease-in-out';
+        cube.style.transform = 'translateZ(-100px)';
+    });
+    
+    // Create starry background effect
+    createStarryBackground();
+}
+
+function createStarryBackground() {
+    const container = document.querySelector('.rubik-container');
+    const starsCount = 50;
+    
+    for (let i = 0; i < starsCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        
+        // Random position
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        
+        // Random size
+        const size = Math.random() * 2 + 1;
+        
+        // Random opacity
+        const opacity = Math.random() * 0.8 + 0.2;
+        
+        // Apply styles
+        star.style.position = 'absolute';
+        star.style.left = `${posX}%`;
+        star.style.top = `${posY}%`;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.opacity = opacity;
+        star.style.borderRadius = '50%';
+        star.style.backgroundColor = 'white';
+        star.style.boxShadow = '0 0 10px rgba(255, 255, 255, 0.8)';
+        
+        // Add animation
+        star.style.animation = `twinkle ${Math.random() * 5 + 2}s infinite`;
+        
+        container.appendChild(star);
+    }
+    
+    // Add twinkle animation
+    const styleSheet = document.createElement('style');
+    styleSheet.innerHTML = `
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+    `;
+    document.head.appendChild(styleSheet);
+}

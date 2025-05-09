@@ -1,0 +1,45 @@
+.c-item{
+    height: 480px;
+
+}
+
+.c-img{
+    height: auto;
+    object-fit: cover;
+    filter: brightness(0.5);
+
+}
+
+.card1:hover {
+            box-shadow: inset 0 4px 8px 0 rgba(255, 0, 0, 0.284), inset 0 6px 20px 0 rgba(255, 0, 0, 0.284);
+            transform: translate(0, -50px);
+
+        }
+
+        .mainBtn {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+        .btn {
+            background-color: red;
+            border: solid 1px red;
+
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            background-color: red;
+        }
+
+        .btn:hover {
+            text-decoration: none;
+            font-weight: bold;
+            background-color: red;
+
+            box-shadow: 0 4px 8px 0 rgba(60, 60, 60, 0.284), 0 6px 20px 0 rgba(0, 0, 0, 0.284);
+            border: solid 1px red;
+
+        }
