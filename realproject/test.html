@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Review Carousel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .slider-container {
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            position: relative;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            flex: 0 0 100%;
+            padding: 30px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .review-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .book-img {
+            width: 150px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .review-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #f0c14b;
+        }
+
+        .review-content p {
+            line-height: 1.6;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+
+        .rating {
+            color: #f0c14b;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #555;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #f0c14b;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: #fff;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .arrow:hover {
+            background-color: rgba(240, 193, 75, 0.7);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .slide {
+                flex: 0 0 100%;
+            }
+            
+            .review-card {
+                flex-direction: row;
+                text-align: left;
+            }
+            
+            .book-img {
+                margin-right: 30px;
+                margin-bottom: 0;
+            }
+            
+            .review-content {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .slide {
+                padding: 20px;
+            }
+            
+            .book-img {
+                width: 120px;
+                height: 180px;
+            }
+            
+            .review-content h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <div class="review-card">
+                        <img src="/api/placeholder/150/220" alt="Book Cover" class="book-img">
+                        <div class="review-content">
+                            <h3>The Silent Echo</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p>"This book captivated me from the first page. The author's vivid descriptions and well-developed characters create an immersive experience that kept me reading late into the night. I couldn't put it down!"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="review-card">
+                        <img src="/api/placeholder/150/220" alt="Book Cover" class="book-img">
+                        <div class="review-content">
+                            <h3>Whispers in the Dark</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"A masterpiece of modern literature! The intricate plot weaves together multiple storylines that culminate in an unexpected and satisfying conclusion. The author's prose is simply beautiful."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="review-card">
+                        <img src="/api/placeholder/150/220" alt="Book Cover" class="book-img">
+                        <div class="review-content">
+                            <h3>Echoes of Eternity</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <p>"I was completely transported to another world through this book. The author's ability to create such a rich, detailed universe is remarkable. The philosophical undertones add depth to an already compelling narrative."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="slide">
+                    <div class="review-card">
+                        <img src="/api/placeholder/150/220" alt="Book Cover" class="book-img">
+                        <div class="review-content">
+                            <h3>The Lost Symphony</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <p>"A thrilling journey through history and music! The research that went into this book is evident in every chapter. The characters feel like old friends, and I found myself deeply invested in their stories."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 5 -->
+                <div class="slide">
+                    <div class="review-card">
+                        <img src="/api/placeholder/150/220" alt="Book Cover" class="book-img">
+                        <div class="review-content">
+                            <h3>Beyond the Horizon</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"This book changed my perspective on life. The author's insights are profound yet accessible, woven into a narrative that is both entertaining and thought-provoking. I've already recommended it to all my friends."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 6 -->
+                <div class="slide">
+                    <div class="review-card">
+                        <img src="/api/placeholder/150/220" alt="Book Cover" class="book-img">
+                        <div class="review-content">
+                            <h3>Midnight's Children</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <p>"An incredible blend of history and fantasy. The author's unique voice and storytelling style create a reading experience unlike any other. The characters are unforgettable and the story will stay with you long after you finish."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 7 -->
+                <div class="slide">
+                    <div class="review-card">
+                        <img src="/api/placeholder/150/220" alt="Book Cover" class="book-img">
+                        <div class="review-content">
+                            <h3>The Quantum Garden</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <p>"A perfect blend of science and storytelling! The author makes complex concepts accessible while never sacrificing the emotional heart of the story. The characters' journeys are both intellectual and deeply human."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 8 -->
+                <div class="slide">
+                    <div class="review-card">
+                        <img src="/api/placeholder/150/220" alt="Book Cover" class="book-img">
+                        <div class="review-content">
+                            <h3>Shadows of the Past</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"I couldn't put this thriller down! The pacing is perfect, with twists and turns that kept me guessing until the very end. The author has a talent for creating tension that builds to an explosive climax."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 9 -->
+                <div class="slide">
+                    <div class="review-card">
+                        <img src="/api/placeholder/150/220" alt="Book Cover" class="book-img">
+                        <div class="review-content">
+                            <h3>The Forgotten Path</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <p>"A beautiful, lyrical exploration of memory and identity. The prose is gorgeous, and the story unfolds with a gentle yet insistent rhythm that mirrors the protagonist's journey. A truly memorable reading experience."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 10 -->
+                <div class="slide">
+                    <div class="review-card">
+                        <img src="/api/placeholder/150/220" alt="Book Cover" class="book-img">
+                        <div class="review-content">
+                            <h3>The Alchemist's Dream</h3>
+                            
+                            <p>"This book combines history, science, and magic in a way that feels both fresh and timeless. The author's research shines through, but never at the expense of the story. A delightful read that educated and entertained me equally."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow prev">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            
+            <div class="arrow next">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+        
+        <div class="slider-dots">
+            <!-- Dots will be added via JS -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.slider');
+            const slides = document.querySelectorAll('.slide');
+            const dotsContainer = document.querySelector('.slider-dots');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            
+            const slideWidth = 100;
+            const totalSlides = slides.length;
+            let currentSlide = 0;
+            
+            // Create dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+            
+            const dots = document.querySelectorAll('.dot');
+            
+            // Initialize slider
+            function initSlider() {
+                slider.style.width = `${totalSlides * 100}%`;
+                slides.forEach(slide => {
+                    slide.style.width = `${slideWidth / totalSlides}%`;
+                });
+            }
+            
+            // Go to specific slide
+            function goToSlide(slideIndex) {
+                if (slideIndex < 0) {
+                    slideIndex = totalSlides - 1;
+                } else if (slideIndex >= totalSlides) {
+                    slideIndex = 0;
+                }
+                
+                currentSlide = slideIndex;
+                const translateX = -currentSlide * (100 / totalSlides);
+                slider.style.transform = `translateX(${translateX}%)`;
+                
+                // Update active dot
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[currentSlide].classList.add('active');
+            }
+            
+            // Event listeners
+            prevBtn.addEventListener('click', () => {
+                goToSlide(currentSlide - 1);
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                goToSlide(currentSlide + 1);
+            });
+            
+            // Initialize slider
+            initSlider();
+            
+            // Touch events for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            slider.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            
+            slider.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    // Swipe left
+                    goToSlide(currentSlide + 1);
+                } else if (touchEndX > touchStartX + swipeThreshold) {
+                    // Swipe right
+                    goToSlide(currentSlide - 1);
+                }
+            }
+            
+            // Auto slide (optional)
+            // Uncomment the following code to enable auto sliding
+            /*
+            const autoSlideInterval = 5000; // 5 seconds
+            
+            let autoSlideTimer = setInterval(() => {
+                goToSlide(currentSlide + 1);
+            }, autoSlideInterval);
+            
+            // Pause auto slide on hover
+            slider.addEventListener('mouseenter', () => {
+                clearInterval(autoSlideTimer);
+            });
+            
+            slider.addEventListener('mouseleave', () => {
+                autoSlideTimer = setInterval(() => {
+                    goToSlide(currentSlide + 1);
+                }, autoSlideInterval);
+            });
+            */
+            
+            // Handle window resize
+            window.addEventListener('resize', initSlider);
+        });
+    </script>
+</body>
+</html>
